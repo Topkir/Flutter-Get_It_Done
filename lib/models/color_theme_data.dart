@@ -49,9 +49,12 @@ class ColorThemeData with ChangeNotifier {
     ),
   );
 
+  bool isGreen = true;
+
   /// Tema değiştirme işlevi
   void swichTheme(bool selected) {
     _selectedThemeData = selected ? _greenTheme : _redTheme;
+    isGreen = selected;
     /// Tema değişikliği bildiriliyor
     notifyListeners();
   }

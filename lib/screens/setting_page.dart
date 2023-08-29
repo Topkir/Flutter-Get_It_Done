@@ -27,7 +27,8 @@ class SwitchCard extends StatefulWidget {
 
 /// Anahtar durumunu yöneten durum sınıfı (_SwitchCardState)
 class _SwitchCardState extends State<SwitchCard> {
-  late bool _value = true;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +37,21 @@ class _SwitchCardState extends State<SwitchCard> {
     /// Kırmızı metin
     Text redtext = Text('Red', style: TextStyle(color: Colors.red));
 
+    late bool _value = Provider.of<ColorThemeData>(context).isGreen;
     /// Ana kartı oluşturuyoruz ve geri döndürüyoruz
-    return buildCard(greentext, redtext, context);
+    return buildCard(greentext, redtext,_value, context);
   }
 
   /// Kartı oluşturan işlev
-  Card buildCard(Text greentext, Text redtext, BuildContext context) {
+  Card buildCard(Text greentext, Text redtext,_value, BuildContext context) {
     return Card(
       /// Anahtar durumu geçirilmiş kartı oluşturuyoruz
-      child: buildSwitchListTile(greentext, redtext, context),
+      child: buildSwitchListTile(greentext, redtext,_value, context),
     );
   }
 
   /// Anahtar durumunu içeren listeden kartı oluşturan işlev
-  SwitchListTile buildSwitchListTile(Text greentext, Text redtext, BuildContext context) {
+  SwitchListTile buildSwitchListTile(Text greentext, Text redtext,bool _value, BuildContext context) {
     return SwitchListTile(
       /// Anahtar durumu metni (eğer açıksa yeşil, değilse kırmızı)
       subtitle: _value ? greentext : redtext,

@@ -28,11 +28,15 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    /// Dismissible kartların yana doğru sürükleyerek siler.
+    /// GestureDetector kartların üstüne tıkladığınızda siler.
+    return Dismissible(
       /// Anahtar, öğeyi benzersiz bir şekilde tanımlamak için kullanılır
       key: Key(title),
       /// Kartın üzerine tıklanınca öğeyi silme işlevini çağırıyoruz
-      onTap: deleteItem,
+      //onTap: deleteItem,
+      ///deleteItem GestureDetector için eklenmesi gereken bir fonksiyondur.
+      onDismissed: (direction) => deleteItem(),
       child: Card(
         /// Kartın rengini duruma göre ayarlıyoruz
         color: isDone ? Colors.green.shade50 : Colors.white,
