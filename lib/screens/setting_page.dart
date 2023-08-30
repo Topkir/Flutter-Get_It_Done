@@ -63,7 +63,7 @@ class _SwitchCardState extends State<SwitchCard> {
           _value = value;
         });
         /// Renk temasını değiştirme işlevini çağırıyoruz
-        Provider.of<ColorThemeData>(context, listen: false).swichTheme(value);
+        Provider.of<ColorThemeData>(context, listen: false).switchTheme(value);
       },
       title: Text(
         'Change Theme Color',
