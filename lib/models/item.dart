@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 /// Öğe sınıfı
 class Item {
   /// Öğe başlığı
   final String title;
+
   /// Öğenin tamamlanma durumu
   bool isDone;
 
@@ -14,4 +17,14 @@ class Item {
     /// Öğenin tamamlanma durumunu tersine çeviriyoruz
     isDone = !isDone;
   }
+
+  Item.fromMap(Map<String, dynamic> map)
+      : title = map['title'],
+        isDone = map['isDone'];
+  Map<String, dynamic> toMap() => {
+        'title': title,
+        'isDone': isDone,
+      };
+
+
 }

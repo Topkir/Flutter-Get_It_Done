@@ -32,7 +32,7 @@ class ItemCard extends StatelessWidget {
     /// GestureDetector kartların üstüne tıkladığınızda siler.
     return Dismissible(
       /// Anahtar, öğeyi benzersiz bir şekilde tanımlamak için kullanılır
-      key: Key(title),
+      key: UniqueKey(),
       /// Kartın üzerine tıklanınca öğeyi silme işlevini çağırıyoruz
       //onTap: deleteItem,
       ///deleteItem GestureDetector için eklenmesi gereken bir fonksiyondur.
