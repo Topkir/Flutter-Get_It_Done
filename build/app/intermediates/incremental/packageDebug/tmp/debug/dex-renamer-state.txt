@@ -1,4 +1,0 @@
-#Sat Sep 02 17:42:52 TRT 2023
-base.0=C\:\\Users\\someone\\StudioProjects\\get_it_done_ver0\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
