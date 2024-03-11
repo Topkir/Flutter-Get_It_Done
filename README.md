@@ -1,2 +1,3 @@
-# get_it_done_ver0
- 
+Teknolojiler:
+- Provider
+- Shared Preferences
